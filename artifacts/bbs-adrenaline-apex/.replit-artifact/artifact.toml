@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "BBS Adrenaline Apex"
+description = "A bold, mobile-friendly website for Mangalore's first pro racing simulator experience, with racing and motion-sensor details, customer reviews, opening hours, location, call, and directions."
+version = "1.0.0"
+id = "artifacts/bbs-adrenaline-apex"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 24030
+
+[services.development]
+run = "pnpm --filter @workspace/bbs-adrenaline-apex run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/bbs-adrenaline-apex", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/bbs-adrenaline-apex/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "24030"
+BASE_PATH = "/"
