@@ -16,7 +16,7 @@ function BrandMark({ inverse = false }: { inverse?: boolean }) {
   return (
     <a href="#top" className={`focus-ring inline-flex items-center gap-3 ${inverse ? 'text-[#f5f0df]' : 'text-[#111b2e]'}`} aria-label="BBS Adrenaline Apex home">
       <span className="relative flex h-10 w-10 items-center justify-center overflow-hidden rounded-full border-2 border-current">
-        <span className="absolute h-1 w-14 -rotate-45 bg-[#cbff42]" />
+        <span className="absolute right-[5px] top-[7px] h-[2px] w-4 -rotate-45 bg-[#cbff42]" />
         <span className="relative font-display text-[19px] font-black leading-none">BBS</span>
       </span>
       <span className="leading-[.82]">
@@ -50,8 +50,8 @@ function AppHome() {
   const closeMenu = () => setMenuOpen(false);
 
   return (
-    <div id="top" className="site-shell noise min-h-[100dvh] bg-[#f4efdf] text-[#111b2e]">
-      <header className={`nav-shell fixed inset-x-0 top-0 z-40 border-b border-[#111b2e]/10 transition-shadow duration-300 ${scrolled ? 'shadow-[0_10px_34px_rgba(17,27,46,.08)]' : ''}`}>
+    <div id="top" className="site-shell min-h-[100dvh] bg-[#f4efdf] text-[#111b2e]">
+      <header className={`nav-shell sticky inset-x-0 top-0 z-40 border-b border-[#111b2e]/10 transition-shadow duration-300 ${scrolled ? 'shadow-[0_10px_34px_rgba(17,27,46,.08)]' : ''}`}>
         <div className="mx-auto flex h-[74px] max-w-[1320px] items-center justify-between px-5 sm:px-8 lg:px-12">
           <BrandMark />
           <nav className="hidden items-center gap-8 lg:flex" aria-label="Primary navigation">
@@ -85,17 +85,15 @@ function AppHome() {
       </header>
 
       <main>
-        <section className="dark-panel hero-grid hero-sheen relative min-h-[760px] overflow-hidden pt-[74px]" aria-labelledby="hero-title">
+        <section className="dark-panel hero-sheen relative min-h-[686px] overflow-hidden" aria-labelledby="hero-title">
           <div className="absolute inset-0 bg-[linear-gradient(105deg,#111b2e_15%,rgba(17,27,46,.88)_52%,rgba(17,27,46,.34)_100%)]" />
-          <div className="absolute right-[-10%] top-[10%] h-[530px] w-[530px] rounded-full border border-[#cbff42]/25 sm:right-[3%] lg:h-[680px] lg:w-[680px]" />
-          <div className="absolute right-[-16%] top-[24%] h-[480px] w-[680px] rotate-[-20deg] border-y border-[#cbff42]/20 lg:right-[-3%]" />
           <div className="relative mx-auto grid min-h-[686px] max-w-[1320px] items-center gap-12 px-5 py-20 sm:px-8 lg:grid-cols-[minmax(0,1fr)_minmax(290px,410px)] lg:gap-16 lg:px-12 lg:py-24">
             <div className="relative z-10 max-w-[770px]">
               <div className="reveal flex items-center gap-3 font-mono-custom text-[10px] uppercase tracking-[.3em] text-[#cbff42]">
                 <span className="h-2 w-2 rounded-full bg-[#cbff42] shadow-[0_0_0_5px_rgba(203,255,66,.12)]" />
                 Mangalore's first pro racing simulator
               </div>
-              <h1 id="hero-title" className="reveal reveal-delay-1 mt-7 max-w-[790px] font-display text-[clamp(5.4rem,14vw,11.5rem)] font-black uppercase leading-[.76] tracking-[-.045em] text-[#f5f0df]">
+              <h1 id="hero-title" className="reveal reveal-delay-1 mt-7 max-w-[790px] font-display text-[clamp(4.1rem,16vw,11.5rem)] font-black uppercase leading-[.86] tracking-[-.045em] text-[#f5f0df] lg:text-[clamp(8rem,14vw,11.5rem)]">
                 Feel<br /><span className="text-[#cbff42]">the track.</span>
               </h1>
               <p className="reveal reveal-delay-2 mt-8 max-w-[475px] text-[15px] leading-7 text-[#d8d8cf] sm:text-[17px]">
@@ -107,7 +105,7 @@ function AppHome() {
               </div>
             </div>
             <div className="relative z-10 hidden h-full min-h-[390px] items-end justify-end lg:flex">
-              <div className="absolute bottom-[-60px] right-[-80px] h-[510px] w-[410px] overflow-hidden rounded-[48%_52%_0_0] border border-[#cbff42]/25 bg-[#1c2b45]">
+              <div className="relative h-[min(440px,34vw)] min-h-[350px] w-full max-w-[410px] overflow-hidden rounded-[48%_52%_0_0] border border-[#cbff42]/25 bg-[#1c2b45]">
                 <img src="/apex-cockpit.jpg" alt="Racing simulator cockpit at BBS Adrenaline Apex" className="h-full w-full object-cover opacity-80 mix-blend-screen" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#111b2e] via-transparent to-[#cbff42]/10" />
               </div>
@@ -138,9 +136,7 @@ function AppHome() {
           </div>
         </section>
 
-        <section id="experience" className="dark-panel relative overflow-hidden px-5 py-20 sm:px-8 lg:px-12 lg:py-28" aria-labelledby="experience-title">
-          <div className="absolute right-[-15%] top-[15%] h-[630px] w-[630px] rounded-full border border-[#cbff42]/15" />
-          <div className="absolute left-[40%] top-[12%] h-px w-[55%] bg-[#cbff42]/30" />
+        <section id="experience" className="dark-panel relative scroll-mt-24 overflow-hidden px-5 py-20 sm:px-8 lg:px-12 lg:py-28" aria-labelledby="experience-title">
           <div className="relative mx-auto max-w-[1320px]">
             <SectionLabel number="01" inverse>The Apex ritual</SectionLabel>
             <div className="mt-7 grid gap-12 lg:grid-cols-[.85fr_1.15fr] lg:gap-24">
@@ -151,16 +147,13 @@ function AppHome() {
               </div>
               <div className="grid gap-3 sm:grid-cols-2">
                 <article className="group relative min-h-[280px] overflow-hidden bg-[#1b2a42] p-6 sm:mt-16">
-                  <div className="absolute right-[-20px] top-[-30px] font-display text-[170px] font-black leading-none text-[#273c59] transition-transform duration-500 group-hover:translate-x-2">01</div>
-                  <div className="relative flex h-full flex-col justify-between"><Play className="text-[#cbff42]" size={28} fill="currentColor" strokeWidth={1} /><div><p className="font-mono-custom text-[10px] uppercase tracking-[.2em] text-[#cbff42]">Step one</p><h3 className="mt-2 font-display text-4xl font-bold uppercase">Choose your line.</h3><p className="mt-2 max-w-[220px] text-sm leading-6 text-[#b6bdc3]">F1 intensity or the open road of Assetto Corsa.</p></div></div>
+                  <div className="relative flex h-full flex-col justify-between"><div className="flex items-center justify-between"><Play className="text-[#cbff42]" size={28} fill="currentColor" strokeWidth={1} /><span className="font-mono-custom text-[10px] uppercase tracking-[.2em] text-[#b6bdc3]">01 / 03</span></div><div><p className="font-mono-custom text-[10px] uppercase tracking-[.2em] text-[#cbff42]">Step one</p><h3 className="mt-2 font-display text-4xl font-bold uppercase">Choose your line.</h3><p className="mt-2 max-w-[220px] text-sm leading-6 text-[#b6bdc3]">F1 intensity or the open road of Assetto Corsa.</p></div></div>
                 </article>
                 <article className="group relative min-h-[280px] overflow-hidden bg-[#cbff42] p-6 text-[#111b2e]">
-                  <div className="absolute right-[-20px] top-[-30px] font-display text-[170px] font-black leading-none text-[#b5e53b] transition-transform duration-500 group-hover:translate-x-2">02</div>
-                  <div className="relative flex h-full flex-col justify-between"><Gauge className="text-[#111b2e]" size={28} strokeWidth={1.8} /><div><p className="font-mono-custom text-[10px] uppercase tracking-[.2em]">Step two</p><h3 className="mt-2 font-display text-4xl font-bold uppercase">Feel it move.</h3><p className="mt-2 max-w-[220px] text-sm leading-6 text-[#28351e]">Motion-sensor gameplay brings weight to every turn.</p></div></div>
+                  <div className="relative flex h-full flex-col justify-between"><div className="flex items-center justify-between"><Gauge className="text-[#111b2e]" size={28} strokeWidth={1.8} /><span className="font-mono-custom text-[10px] uppercase tracking-[.2em] text-[#28351e]">02 / 03</span></div><div><p className="font-mono-custom text-[10px] uppercase tracking-[.2em]">Step two</p><h3 className="mt-2 font-display text-4xl font-bold uppercase">Feel it move.</h3><p className="mt-2 max-w-[220px] text-sm leading-6 text-[#28351e]">Motion-sensor gameplay brings weight to every turn.</p></div></div>
                 </article>
                 <article className="group relative min-h-[280px] overflow-hidden border border-[#f5f0df]/20 p-6 sm:col-span-2">
-                  <div className="absolute inset-y-0 right-0 w-[42%] bg-[linear-gradient(135deg,transparent_20%,rgba(203,255,66,.13)_20%,rgba(203,255,66,.13)_21%,transparent_21%,transparent_45%,rgba(203,255,66,.13)_45%,rgba(203,255,66,.13)_46%,transparent_46%)]" />
-                  <div className="relative flex h-full flex-col justify-between"><Route className="text-[#cbff42]" size={28} strokeWidth={1.5} /><div><p className="font-mono-custom text-[10px] uppercase tracking-[.2em] text-[#cbff42]">Step three</p><h3 className="mt-2 font-display text-4xl font-bold uppercase sm:text-5xl">Find your apex.</h3><p className="mt-2 max-w-[330px] text-sm leading-6 text-[#b6bdc3]">Stay smooth, chase the next corner, and leave wanting another lap.</p></div></div>
+                  <div className="relative flex h-full flex-col justify-between"><div className="flex items-center justify-between"><Route className="text-[#cbff42]" size={28} strokeWidth={1.5} /><span className="font-mono-custom text-[10px] uppercase tracking-[.2em] text-[#b6bdc3]">03 / 03</span></div><div><p className="font-mono-custom text-[10px] uppercase tracking-[.2em] text-[#cbff42]">Step three</p><h3 className="mt-2 font-display text-4xl font-bold uppercase sm:text-5xl">Find your apex.</h3><p className="mt-2 max-w-[330px] text-sm leading-6 text-[#b6bdc3]">Stay smooth, chase the next corner, and leave wanting another lap.</p></div></div>
                 </article>
               </div>
             </div>
@@ -169,10 +162,12 @@ function AppHome() {
 
         <section className="bg-[#dfe6cf] px-5 py-16 sm:px-8 lg:px-12 lg:py-24" aria-labelledby="scene-title">
           <div className="mx-auto grid max-w-[1320px] items-center gap-12 lg:grid-cols-[1.1fr_.9fr] lg:gap-24">
-            <div className="relative min-h-[440px] overflow-hidden bg-[#18273e]">
-              <img src="/apex-cockpit.jpg" alt="Inside the immersive racing simulator cockpit" className="absolute inset-0 h-full w-full object-cover opacity-90" />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#111b2e] via-transparent to-[#cbff42]/10" />
-              <div className="absolute bottom-5 left-5 right-5 flex items-end justify-between border-t border-[#f5f0df]/35 pt-4 text-[#f5f0df]"><span className="font-mono-custom text-[9px] uppercase tracking-[.18em]">Apex cockpit / live view</span><span className="font-display text-5xl font-black leading-none text-[#cbff42]">GO</span></div>
+            <div className="overflow-hidden bg-[#18273e]">
+              <img src="/apex-cockpit.jpg" alt="Inside the immersive racing simulator cockpit" className="block h-[360px] w-full object-cover opacity-90 sm:h-[400px] lg:h-[440px]" />
+              <div className="flex items-center justify-between gap-4 border-t border-[#f5f0df]/35 px-5 py-4 text-[#f5f0df]">
+                <span className="font-mono-custom text-[9px] uppercase tracking-[.18em]">Apex cockpit / live view</span>
+                <span className="shrink-0 font-display text-5xl font-black leading-none text-[#cbff42]">GO</span>
+              </div>
             </div>
             <div>
               <SectionLabel number="02">For the first lap</SectionLabel>
@@ -183,7 +178,7 @@ function AppHome() {
           </div>
         </section>
 
-        <section id="stories" className="bg-[#f4efdf] px-5 py-20 sm:px-8 lg:px-12 lg:py-28" aria-labelledby="stories-title">
+        <section id="stories" className="scroll-mt-24 bg-[#f4efdf] px-5 py-20 sm:px-8 lg:px-12 lg:py-28" aria-labelledby="stories-title">
           <div className="mx-auto max-w-[1320px]">
             <div className="flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
               <div><SectionLabel number="03">From the grid</SectionLabel><h2 id="stories-title" className="mt-6 font-display text-6xl font-bold uppercase leading-[.85] tracking-[-.025em] sm:text-8xl">Words<br /><span className="text-[#7c8c38]">after</span> the lap.</h2></div>
@@ -197,8 +192,7 @@ function AppHome() {
           </div>
         </section>
 
-        <section id="visit" className="dark-panel relative overflow-hidden px-5 py-20 sm:px-8 lg:px-12 lg:py-28" aria-labelledby="visit-title">
-          <div className="absolute inset-x-0 bottom-0 h-1/2 map-grid opacity-15" />
+        <section id="visit" className="dark-panel relative scroll-mt-24 overflow-hidden px-5 py-20 sm:px-8 lg:px-12 lg:py-28" aria-labelledby="visit-title">
           <div className="relative mx-auto max-w-[1320px]">
             <SectionLabel number="04" inverse>Make the trip</SectionLabel>
             <div className="mt-8 grid gap-12 lg:grid-cols-[1fr_.9fr] lg:gap-24">
@@ -218,7 +212,7 @@ function AppHome() {
           <div><BrandMark inverse /><p className="mt-5 max-w-[310px] font-mono-custom text-[9px] uppercase leading-5 tracking-[.16em] text-[#89939e]">A local racing destination for anyone ready to feel the track.</p></div>
           <div className="flex items-center gap-6"><a href="https://www.instagram.com/bbs_adrenaline_apex/" target="_blank" rel="noreferrer" className="focus-ring inline-flex items-center gap-2 font-mono-custom text-[10px] uppercase tracking-[.16em] text-[#d8d8cf] hover:text-[#cbff42]"><Instagram size={16} /> @bbs_adrenaline_apex</a><a href={phoneUrl} className="focus-ring inline-flex items-center gap-2 font-mono-custom text-[10px] uppercase tracking-[.16em] text-[#d8d8cf] hover:text-[#cbff42]"><Phone size={16} /> Call us</a></div>
         </div>
-        <div className="mx-auto mt-9 flex max-w-[1320px] justify-between border-t border-[#f5f0df]/15 pt-4 font-mono-custom text-[9px] uppercase tracking-[.16em] text-[#667083]"><span>© BBS Adrenaline Apex</span><span>Mangaluru, Karnataka</span></div>
+        <div className="mx-auto mt-9 flex max-w-[1320px] flex-wrap justify-between gap-x-4 gap-y-2 border-t border-[#f5f0df]/15 pt-4 font-mono-custom text-[9px] uppercase tracking-[.16em] text-[#667083]"><span>© BBS Adrenaline Apex</span><span>Mangaluru, Karnataka</span></div>
       </footer>
     </div>
   );
