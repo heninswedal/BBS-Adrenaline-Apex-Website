@@ -87,13 +87,13 @@ function AppHome() {
       <main>
         <section className="dark-panel hero-sheen relative min-h-[686px] overflow-hidden" aria-labelledby="hero-title">
           <div className="absolute inset-0 bg-[linear-gradient(105deg,#111b2e_15%,rgba(17,27,46,.88)_52%,rgba(17,27,46,.34)_100%)]" />
-          <div className="relative mx-auto grid min-h-[686px] max-w-[1320px] items-center gap-12 px-5 py-20 sm:px-8 lg:grid-cols-[minmax(0,1fr)_minmax(290px,410px)] lg:gap-16 lg:px-12 lg:py-24">
+          <div className="relative mx-auto grid min-h-[686px] max-w-[1320px] items-center gap-12 px-5 py-20 sm:px-8 lg:px-12 lg:py-24 xl:grid-cols-[minmax(0,1fr)_minmax(290px,410px)] xl:gap-16">
             <div className="relative z-10 max-w-[770px]">
               <div className="reveal flex items-center gap-3 font-mono-custom text-[10px] uppercase tracking-[.3em] text-[#cbff42]">
                 <span className="h-2 w-2 rounded-full bg-[#cbff42] shadow-[0_0_0_5px_rgba(203,255,66,.12)]" />
                 Mangalore's first pro racing simulator
               </div>
-              <h1 id="hero-title" className="reveal reveal-delay-1 mt-7 max-w-[790px] font-display text-[clamp(4.1rem,16vw,11.5rem)] font-black uppercase leading-[.86] tracking-[-.045em] text-[#f5f0df] lg:text-[clamp(8rem,14vw,11.5rem)]">
+              <h1 id="hero-title" className="reveal reveal-delay-1 mt-7 max-w-[790px] font-display text-[clamp(4.1rem,16vw,11.5rem)] font-black uppercase leading-[.86] tracking-[-.045em] text-[#f5f0df] xl:text-[clamp(7rem,12vw,10rem)] 2xl:text-[clamp(8rem,14vw,11.5rem)]">
                 Feel<br /><span className="text-[#cbff42]">the track.</span>
               </h1>
               <p className="reveal reveal-delay-2 mt-8 max-w-[475px] text-[15px] leading-7 text-[#d8d8cf] sm:text-[17px]">
@@ -104,7 +104,7 @@ function AppHome() {
                 <a href={phoneUrl} className="focus-ring inline-flex items-center gap-3 border-b border-[#f5f0df]/35 pb-1 font-mono-custom text-[11px] uppercase tracking-[.18em] text-[#f5f0df] transition-colors hover:border-[#cbff42] hover:text-[#cbff42]"><Phone size={15} /> Call to plan your run</a>
               </div>
             </div>
-            <div className="relative z-10 hidden h-full min-h-[390px] items-end justify-end lg:flex">
+            <div className="relative z-10 hidden h-full min-h-[390px] items-end justify-end xl:flex">
               <div className="relative h-[min(440px,34vw)] min-h-[350px] w-full max-w-[410px] overflow-hidden rounded-[48%_52%_0_0] border border-[#cbff42]/25 bg-[#1c2b45]">
                 <img src="/apex-cockpit.jpg" alt="Racing simulator cockpit at BBS Adrenaline Apex" className="h-full w-full object-cover opacity-80 mix-blend-screen" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#111b2e] via-transparent to-[#cbff42]/10" />
