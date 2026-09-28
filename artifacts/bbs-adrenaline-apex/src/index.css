@@ -110,12 +110,7 @@
 .site-shell { overflow: clip; }
 .nav-shell { backdrop-filter: blur(18px); background: hsl(43 42% 95% / 0.82); }
 .dark-panel { background: #111b2e; color: #f5f0df; }
-.hero-grid {
-  background-image: linear-gradient(rgba(245,240,223,.06) 1px, transparent 1px), linear-gradient(90deg, rgba(245,240,223,.06) 1px, transparent 1px);
-  background-size: 52px 52px;
-}
 .hero-sheen { background: radial-gradient(circle at 74% 30%, rgba(203,255,66,.16), transparent 22%), radial-gradient(circle at 60% 80%, rgba(66,102,150,.35), transparent 40%); }
-.noise::after { content: ''; pointer-events: none; position: fixed; inset: 0; z-index: 50; opacity: .035; mix-blend-mode: multiply; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.45'/%3E%3C/svg%3E"); }
 .ticker-track { animation: ticker 24s linear infinite; }
 .reveal { animation: reveal .8s cubic-bezier(.2,.8,.2,1) both; }
 .reveal-delay-1 { animation-delay: .12s; }
@@ -127,11 +122,10 @@
 .accent-rule { width: 3.25rem; height: 3px; background: hsl(var(--accent)); }
 .quote-mark { font-family: Georgia, serif; color: hsl(var(--accent)); font-size: 5rem; line-height: .4; }
 .stat-line { border-top: 1px solid currentColor; }
-.map-grid { background-image: linear-gradient(rgba(17,27,46,.08) 1px, transparent 1px), linear-gradient(90deg, rgba(17,27,46,.08) 1px, transparent 1px); background-size: 32px 32px; }
 .focus-ring:focus-visible { outline: 3px solid hsl(var(--accent)); outline-offset: 4px; }
 
 @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-@keyframes reveal { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes reveal { from { opacity: 0; } to { opacity: 1; } }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
